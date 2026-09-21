@@ -45,3 +45,4 @@ Diese Seite ist ein **Design-Konzept von SAKA Solutions** für Werbung auf TikTo
 
 - 2026-09-21: Seite nach Vorlage gebaut. Grün/Senf-Palette wurde vorher abgelehnt, deshalb Navy/Rot aus der Vorlage.
 - 2026-09-21: „Notdienst erreichbar“-Karte im Hero entfernt (lag am Desktop im Gesicht des Monteurs, Seite ist ohne sie clean genug).
+- 2026-09-21: Scroll-Animationen eingebaut. Ein System über `data-anim` (up, left, right, fade) plus `data-anim-stagger` für versetzte Gruppen, gesteuert von einem IntersectionObserver; jedes Element blendet einmal ein. Ruhig gehalten: nur Einblenden und kurzer Versatz (20–34 px), keine Zoom- oder Wipp-Effekte. Bei `prefers-reduced-motion` wird die Klasse `js-anim` gar nicht erst gesetzt, ohne JS bleibt alles sichtbar. Seitliche Bewegungen sind unter 900 px auf vertikal umgestellt und die Abschnitte haben `overflow-x: clip`, damit bei 375 px nichts über den Rand läuft.
