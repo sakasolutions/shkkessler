@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Konzeptseite mit fiktivem Betrieb – für echte Kunden entfernen -->
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Sanitär &amp; Heizung in Heidenheim – 24/7 Notdienst | Kessler</title>
+  <meta name="description" content="Kessler Haustechnik: Ihr Meisterbetrieb für Sanitär, Heizung, Wärmepumpe und Badsanierung in Heidenheim, Giengen und Umgebung. 24/7 Notdienst, kostenloses Angebot." />
+  <link rel="canonical" href="https://www.kessler-beispiel.de/" />
+  <meta name="theme-color" content="#1c2257" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:title" content="Kessler Haustechnik – Sanitär & Heizung in Heidenheim" />
+  <meta property="og:description" content="Meisterbetrieb für Sanitär, Heizung und Badsanierung. 24/7 Notdienst im Landkreis Heidenheim." />
+  <meta property="og:url" content="https://www.kessler-beispiel.de/" />
+  <meta property="og:image" content="https://www.kessler-beispiel.de/img/bad.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    "name": "Kessler Haustechnik",
+    "description": "Meisterbetrieb für Sanitär, Heizung, Wärmepumpe und Badsanierung mit 24/7 Notdienst.",
+    "url": "https://www.kessler-beispiel.de/",
+    "telephone": "+497321000000",
+    "email": "info@kessler-beispiel.de",
+    "image": "https://www.kessler-beispiel.de/img/bad.jpg",
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Beispielstraße 12",
+      "postalCode": "89518",
+      "addressLocality": "Heidenheim an der Brenz",
+      "addressCountry": "DE"
+    },
+    "areaServed": ["Heidenheim an der Brenz", "Giengen an der Brenz", "Herbrechtingen", "Königsbronn", "Steinheim am Albuch", "Nattheim", "Sontheim an der Brenz", "Gerstetten"],
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "17:00" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Wie schnell sind Sie im Notfall da?", "acceptedAnswer": { "@type": "Answer", "text": "Im Raum Heidenheim meist innerhalb von 60 Minuten, rund um die Uhr, auch am Wochenende und an Feiertagen." } },
+      { "@type": "Question", "name": "Was kostet eine Badsanierung?", "acceptedAnswer": { "@type": "Answer", "text": "Ein Komplettbad mit rund 8 m² liegt meist zwischen 18.000 und 35.000 Euro. Nach dem kostenlosen Vor-Ort-Termin erhalten Sie einen verbindlichen Festpreis." } },
+      { "@type": "Question", "name": "Helfen Sie bei der Förderung für eine Wärmepumpe?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Wir prüfen Ihren Anspruch auf die BEG-Förderung, bereiten die Unterlagen vor und begleiten den Antrag bis zur Auszahlung." } },
+      { "@type": "Question", "name": "Ist das Angebot kostenlos?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Beratung, Besichtigung und Angebot sind kostenlos und unverbindlich." } }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="img/hero-bg.jpg" fetchpriority="high" />
+
+  <style>
+    :root {
+      --navy: #1c2257;
+      --navy-2: #141942;
+      --navy-3: #0f1335;
+      --red: #e3262b;
+      --red-dark: #c41d22;
+      --ink: #1c2257;
+      --text: #4b5169;
+      --muted: #7a7f96;
+      --bg: #ffffff;
+      --bg-soft: #f4f5fb;
+      --bg-lav: #eef0f9;
+      --line: #e5e7f1;
+      --white: #ffffff;
+      --star: #f5a623;
+      --ok: #1d9bf0;
+      --max: 1200px;
+      --radius: 10px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { font-family: "Manrope", system-ui, sans-serif; color: var(--text); background: var(--bg); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    button, input, select, textarea { font: inherit; color: inherit; }
+    button { cursor: pointer; background: none; border: 0; }
+    .wrap { width: min(100% - 40px, var(--max)); margin-inline: auto; }
+    h1, h2, h3, h4 { color: var(--ink); line-height: 1.15; letter-spacing: -0.015em; }
+    :focus-visible { outline: 2px solid var(--red); outline-offset: 3px; border-radius: 4px; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 48px; padding: 0 24px; border-radius: 6px; font-weight: 700; font-size: 15px; border: 2px solid transparent; transition: background .2s, color .2s, border-color .2s, transform .2s; white-space: nowrap; }
+    .btn svg { width: 18px; height: 18px; flex: none; }
+    .btn-red { background: var(--red); color: var(--white); }
+    .btn-red:hover { background: var(--red-dark); }
+    .btn-white { background: var(--white); color: var(--navy); }
+    .btn-white:hover { background: var(--bg-lav); }
+    .btn-navy { background: var(--navy); color: var(--white); height: 42px; padding: 0 20px; font-size: 14px; }
+    .btn-navy:hover { background: var(--navy-3); }
+    .btn-ghost { border-color: rgba(255,255,255,.55); color: var(--white); }
+    .btn-ghost:hover { background: rgba(255,255,255,.1); }
+
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--red); font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+    .eyebrow svg { width: 18px; height: 18px; }
+    .section { padding: 110px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; margin-bottom: 56px; }
+    .section-head h2 { font-size: 44px; font-weight: 600; }
+    .section-head p { max-width: 560px; margin-top: 16px; }
+    .link-arrow { display: inline-flex; align-items: center; gap: 10px; color: var(--red); font-weight: 700; font-size: 15px; white-space: nowrap; }
+    .link-arrow svg { width: 22px; height: 12px; transition: transform .2s; }
+    .link-arrow:hover svg { transform: translateX(4px); }
+
+    /* ---------- Topbar ---------- */
+    .topbar { background: var(--white); font-size: 13.5px; color: var(--navy); border-bottom: 1px solid var(--line); }
+    .topbar .wrap { display: flex; justify-content: space-between; align-items: center; min-height: 44px; gap: 20px; }
+    .topbar .places { display: flex; align-items: center; gap: 18px; }
+    .topbar .places svg { width: 15px; height: 15px; color: var(--red); }
+    .topbar .contact { display: flex; gap: 24px; }
+    .topbar a, .topbar span { display: inline-flex; align-items: center; gap: 8px; font-weight: 500; }
+    .topbar a svg { width: 15px; height: 15px; color: var(--navy); }
+    .topbar a:hover { color: var(--red); }
+
+    /* ---------- Hero ---------- */
+    .hero { position: relative; overflow: hidden; background: var(--navy-3); color: var(--white); isolation: isolate; }
+    .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; filter: grayscale(.35) contrast(1.05); }
+    .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(15,19,53,.96) 0%, rgba(15,19,53,.88) 42%, rgba(15,19,53,.55) 70%, rgba(15,19,53,.35) 100%), linear-gradient(0deg, rgba(15,19,53,.7) 0%, rgba(15,19,53,0) 40%); }
+
+    .nav { position: relative; z-index: 5; }
+    .nav .wrap { display: flex; align-items: center; height: 88px; gap: 40px; }
+    .logo { display: flex; align-items: center; gap: 10px; color: var(--white); }
+    .logo-mark { width: 40px; height: 40px; border-radius: 9px; background: var(--red); display: grid; place-items: center; }
+    .logo-mark svg { width: 22px; height: 22px; }
+    .logo strong { display: block; font-size: 17px; font-weight: 800; letter-spacing: .06em; line-height: 1; }
+    .logo small { display: block; font-size: 11.5px; font-weight: 600; letter-spacing: .08em; opacity: .75; margin-top: 4px; }
+    .menu { display: flex; gap: 30px; list-style: none; font-size: 15px; font-weight: 600; }
+    .menu > li { position: relative; }
+    .menu a, .menu button { display: inline-flex; align-items: center; gap: 6px; padding: 10px 0; color: rgba(255,255,255,.88); transition: color .2s; }
+    .menu a:hover, .menu button:hover { color: var(--white); }
+    .menu button svg { width: 12px; height: 12px; transition: transform .2s; }
+    .dropdown { position: absolute; top: 100%; left: -18px; min-width: 240px; background: var(--white); border-radius: 10px; padding: 8px; box-shadow: 0 20px 44px rgba(15,19,53,.25); list-style: none; opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity .2s, transform .2s, visibility .2s; }
+    .dropdown a { display: block; padding: 10px 12px; border-radius: 6px; color: var(--navy); font-weight: 600; font-size: 14.5px; }
+    .dropdown a:hover { background: var(--bg-soft); color: var(--red); }
+    .menu li:hover .dropdown, .menu li:focus-within .dropdown { opacity: 1; visibility: visible; transform: none; }
+    .menu li:hover button svg, .menu li:focus-within button svg { transform: rotate(180deg); }
+    .nav .btn { margin-left: auto; height: 44px; }
+    .burger { display: none; margin-left: auto; width: 46px; height: 46px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,.35); color: var(--white); place-items: center; }
+    .burger svg { width: 22px; height: 22px; }
+
+    .hero-inner { display: grid; grid-template-columns: 1.15fr .85fr; align-items: end; min-height: 600px; }
+    .hero-copy { padding: 70px 0 96px; }
+    .hero h1 { font-size: 58px; font-weight: 700; color: var(--white); line-height: 1.12; max-width: 640px; }
+    .hero-sub { font-size: 17px; color: rgba(255,255,255,.82); max-width: 520px; margin-top: 22px; }
+    .hero-cta { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+    .stats { display: flex; gap: 48px; margin-top: 56px; }
+    .stat svg { width: 30px; height: 30px; color: rgba(255,255,255,.7); margin-bottom: 10px; }
+    .stat strong { display: block; font-size: 30px; font-weight: 800; color: var(--red); line-height: 1; }
+    .stat span { font-size: 14px; color: rgba(255,255,255,.75); }
+    .hero-person { align-self: end; justify-self: center; position: relative; }
+    .hero-person img { height: 560px; width: auto; max-width: none; filter: drop-shadow(0 30px 50px rgba(0,0,0,.45)); }
+
+    /* ---------- Leistungen ---------- */
+    .services-list { display: grid; gap: 40px; }
+    .service { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .service:nth-child(even) .service-media { order: -1; }
+    .service-text { padding: 0 20px; }
+    .service-text h3 { font-size: 30px; font-weight: 600; }
+    .service-text p { margin: 14px 0 22px; max-width: 460px; }
+    .service-text ul { list-style: none; display: grid; gap: 8px; margin: -6px 0 26px; }
+    .service-text li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; color: var(--navy); font-weight: 500; }
+    .service-text li svg { width: 18px; height: 18px; color: var(--red); flex: none; margin-top: 3px; }
+    .service-media { border-radius: var(--radius); overflow: hidden; aspect-ratio: 16 / 11; }
+    .service-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+    .service:hover .service-media img { transform: scale(1.04); }
+
+    /* ---------- Arbeiten ---------- */
+    .works { background: var(--white); padding-top: 0; }
+    .gallery { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 120px; gap: 16px; }
+    .gallery figure { position: relative; border-radius: var(--radius); overflow: hidden; background: var(--bg-soft); }
+    .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+    .gallery figure:hover img { transform: scale(1.05); }
+    .gallery figcaption { position: absolute; left: 12px; bottom: 12px; background: rgba(255,255,255,.95); color: var(--navy); font-size: 13px; font-weight: 700; padding: 6px 10px; border-radius: 6px; opacity: 0; transform: translateY(6px); transition: opacity .25s, transform .25s; }
+    .gallery figure:hover figcaption, .gallery figure:focus-within figcaption { opacity: 1; transform: none; }
+    .g1 { grid-column: span 4; grid-row: span 2; }
+    .g2 { grid-column: span 4; grid-row: span 2; }
+    .g3 { grid-column: span 4; grid-row: span 4; }
+    .g4 { grid-column: span 3; grid-row: span 2; }
+    .g5 { grid-column: span 5; grid-row: span 2; }
+
+    /* ---------- Bewertungen ---------- */
+    .reviews { background: var(--bg-lav); position: relative; overflow: hidden; }
+    .reviews::before { content: ""; position: absolute; left: -120px; top: 40px; width: 420px; height: 300px; border-radius: 50%; background: rgba(28,34,87,.04); }
+    .google-badge { display: flex; align-items: center; gap: 14px; background: var(--white); border-radius: 12px; padding: 14px 18px; box-shadow: 0 10px 30px rgba(28,34,87,.06); }
+    .google-badge svg { width: 34px; height: 34px; flex: none; }
+    .google-badge strong { display: block; color: var(--navy); font-size: 20px; line-height: 1; }
+    .google-badge .stars { margin: 4px 0; }
+    .google-badge small { font-size: 12px; color: var(--muted); }
+    .stars { display: flex; gap: 2px; color: var(--star); }
+    .stars svg { width: 16px; height: 16px; }
+    .review-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 48px) / 3); gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 6px; }
+    .review-track::-webkit-scrollbar { display: none; }
+    .review { scroll-snap-align: start; background: var(--white); border-radius: 12px; padding: 28px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 6px 20px rgba(28,34,87,.05); }
+    .review-head { display: flex; align-items: center; gap: 12px; }
+    .avatar { width: 44px; height: 44px; border-radius: 8px; display: grid; place-items: center; color: var(--white); font-weight: 800; flex: none; }
+    .review-head strong { display: block; color: var(--navy); font-size: 15.5px; }
+    .review-head small { font-size: 12.5px; color: var(--muted); }
+    .rating-line { display: flex; align-items: center; gap: 8px; }
+    .verified { width: 16px; height: 16px; color: var(--ok); }
+    .review p { font-size: 15px; }
+    .slider-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; gap: 20px; }
+    .slider-controls .note { font-size: 13px; color: var(--muted); }
+    .arrows { display: flex; gap: 10px; }
+    .arrow { width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid var(--navy); color: var(--navy); display: grid; place-items: center; transition: background .2s, color .2s; }
+    .arrow:hover { background: var(--navy); color: var(--white); }
+    .arrow svg { width: 16px; height: 16px; }
+
+    /* ---------- Partner ---------- */
+    .partners { padding: 90px 0; text-align: center; }
+    .partners h2 { font-size: 38px; font-weight: 600; max-width: 640px; margin: 0 auto; }
+    .partners .eyebrow { justify-content: center; }
+    .logo-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; margin-top: 48px; }
+    .logo-tile { height: 82px; border: 1px solid var(--line); border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 8px; color: #9a9fb5; font-weight: 800; letter-spacing: .1em; font-size: 14px; transition: color .2s, border-color .2s; }
+    .logo-tile svg { width: 22px; height: 22px; }
+    .logo-tile:hover { color: var(--navy); border-color: var(--navy); }
+    .partners .note { margin-top: 18px; font-size: 13px; color: var(--muted); }
+
+    /* ---------- Einsatzgebiet ---------- */
+    .area { background: var(--bg-soft); }
+    .area-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: center; }
+    .area h2 { font-size: 44px; font-weight: 600; }
+    .area p { margin-top: 16px; max-width: 460px; }
+    .towns { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 32px; list-style: none; }
+    .towns li { background: var(--white); border: 1px solid var(--line); border-radius: 30px; padding: 8px 16px; font-size: 14.5px; font-weight: 600; color: var(--navy); display: flex; align-items: center; gap: 8px; }
+    .towns li svg { width: 14px; height: 14px; color: var(--red); }
+    .map { position: relative; height: 460px; border-radius: 16px; overflow: hidden; background: #e8e9ee; box-shadow: 0 20px 50px rgba(28,34,87,.1); }
+    .map-tiles { position: absolute; left: 50%; top: 50%; transform: translate(calc(-50% - 15px), calc(-50% + 245px)); display: grid; grid-template-columns: repeat(8, 256px); filter: grayscale(1) contrast(.9) brightness(1.05); }
+    .map-tiles img { width: 256px; height: 256px; max-width: none; }
+    .map::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(227,38,43,.12) 0 140px, transparent 141px); pointer-events: none; }
+    .map-pin { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -100%); display: flex; flex-direction: column; align-items: center; }
+    .map-pin .label { background: var(--navy); color: var(--white); font-size: 13px; font-weight: 700; padding: 8px 12px; border-radius: 8px; white-space: nowrap; }
+    .map-pin svg { width: 34px; height: 34px; color: var(--red); margin-top: 4px; }
+    .map-credit { position: absolute; right: 8px; bottom: 6px; font-size: 10px; color: #777; background: rgba(255,255,255,.8); padding: 1px 5px; border-radius: 3px; }
+
+    /* ---------- FAQ + Kontakt ---------- */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .faq h2, .form-card h2 { font-size: 36px; font-weight: 600; }
+    .faq-list { margin-top: 30px; display: grid; gap: 12px; }
+    .faq-item { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--white); }
+    .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 22px; text-align: left; font-weight: 700; color: var(--navy); font-size: 16px; }
+    .faq-q svg { width: 20px; height: 20px; flex: none; color: var(--red); transition: transform .25s; }
+    .faq-item.open .faq-q svg { transform: rotate(45deg); }
+    .faq-a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s; }
+    .faq-a > div { overflow: hidden; }
+    .faq-a p { padding: 0 22px 20px; font-size: 15px; }
+    .faq-item.open .faq-a { grid-template-rows: 1fr; }
+    .form-card { background: var(--navy); color: rgba(255,255,255,.85); border-radius: 16px; padding: 40px; }
+    .form-card h2 { color: var(--white); }
+    .form-card > p { margin: 10px 0 26px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .field { display: grid; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: 13.5px; font-weight: 600; color: var(--white); }
+    .field input, .field select, .field textarea { width: 100%; height: 48px; padding: 0 14px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); color: var(--white); transition: border-color .2s, background .2s; }
+    .field select option { color: var(--navy); }
+    .field textarea { height: 104px; padding: 12px 14px; resize: vertical; }
+    .field input::placeholder, .field textarea::placeholder { color: rgba(255,255,255,.45); }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--red); background: rgba(255,255,255,.1); }
+    .field .err { display: none; font-size: 12.5px; color: #ffb3b5; }
+    .field.invalid input { border-color: #ff7a7e; }
+    .field.invalid .err { display: block; }
+    .form-card .btn { width: 100%; margin-top: 20px; }
+    .form-note { margin-top: 12px; font-size: 12.5px; color: rgba(255,255,255,.6); text-align: center; }
+    .form-ok { display: none; margin-top: 14px; padding: 12px 14px; border-radius: 8px; background: rgba(34,197,94,.15); color: #bbf7d0; font-size: 14px; }
+
+    /* ---------- Notdienst-Band ---------- */
+    .emergency { background: var(--red); color: var(--white); }
+    .emergency .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 30px 0; }
+    .emergency strong { display: block; font-size: 24px; font-weight: 800; }
+    .emergency span { opacity: .9; }
+    .emergency .btn { background: var(--white); color: var(--red); }
+    .emergency .btn:hover { background: var(--bg-soft); }
+
+    /* ---------- Footer ---------- */
+    .footer { background: var(--navy-3); color: rgba(255,255,255,.7); padding: 70px 0 0; font-size: 15px; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 50px; }
+    .footer .logo small { opacity: .6; }
+    .footer p { margin-top: 16px; max-width: 280px; }
+    .footer h4 { color: var(--white); font-size: 16px; margin-bottom: 16px; }
+    .footer ul { list-style: none; display: grid; gap: 9px; }
+    .footer a:hover { color: var(--white); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding: 22px 0 26px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13.5px; }
+    .footer-bottom nav { display: flex; gap: 22px; }
+
+    .mobile-bar { display: none; }
+    .mobile-menu { display: none; }
+
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } html { scroll-behavior: auto; } }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1080px) {
+      .menu, .nav .btn { display: none; }
+      .burger { display: grid; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-person { display: none; }
+      .hero-copy { padding: 40px 0 80px; }
+      .section-head { flex-direction: column; align-items: flex-start; }
+      .service, .area-grid, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+      .service:nth-child(even) .service-media { order: 0; }
+      .service-text { padding: 0; }
+      .review-track { grid-auto-columns: calc((100% - 24px) / 2); }
+      .logo-row { grid-template-columns: repeat(3, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .mobile-menu { position: fixed; inset: 0; z-index: 50; background: var(--navy-3); color: var(--white); padding: 24px; display: flex; flex-direction: column; gap: 6px; transform: translateX(100%); transition: transform .3s; visibility: hidden; }
+      .mobile-menu.open { transform: none; visibility: visible; }
+      .mobile-menu .close { align-self: flex-end; width: 46px; height: 46px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,.3); color: var(--white); font-size: 26px; line-height: 1; }
+      .mobile-menu a { font-size: 24px; font-weight: 700; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+      .mobile-menu .btn { margin-top: 20px; font-size: 16px; border: 0; }
+    }
+    @media (max-width: 700px) {
+      body { padding-bottom: 74px; }
+      .topbar .places, .topbar .mail { display: none; }
+      .topbar .wrap { justify-content: center; }
+      .nav .wrap { height: 72px; }
+      .hero h1 { font-size: 38px; }
+      .hero-sub { font-size: 16px; }
+      .hero-cta .btn { flex: 1 1 100%; }
+      .stats { gap: 22px; margin-top: 40px; flex-wrap: wrap; }
+      .stat strong { font-size: 24px; }
+      .stat svg { width: 24px; height: 24px; }
+      .section { padding: 76px 0; }
+      .section-head h2, .area h2 { font-size: 32px; }
+      .service-text h3 { font-size: 25px; }
+      .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 130px; gap: 10px; }
+      .g1, .g2, .g4, .g5 { grid-column: span 1; grid-row: span 2; }
+      .g3 { grid-column: span 2; grid-row: span 2; }
+      .gallery figcaption { opacity: 1; transform: none; font-size: 11.5px; }
+      .review-track { grid-auto-columns: 88%; }
+      .slider-controls { flex-direction: column-reverse; align-items: flex-start; }
+      .partners h2 { font-size: 28px; }
+      .logo-row { grid-template-columns: repeat(2, 1fr); }
+      .map { height: 340px; }
+      .form-card { padding: 28px 20px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .faq h2, .form-card h2 { font-size: 28px; }
+      .emergency .wrap { flex-direction: column; align-items: flex-start; }
+      .emergency .btn { width: 100%; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .mobile-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; padding: 12px 14px calc(12px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.96); backdrop-filter: blur(8px); border-top: 1px solid var(--line); }
+      .mobile-bar .btn { height: 48px; padding: 0 12px; }
+      .mobile-bar .btn-outline { border-color: var(--navy); color: var(--navy); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="wrap">
+      <div class="places">
+        <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Heidenheim</span>
+        <span>Giengen</span>
+        <span>Herbrechtingen</span>
+      </div>
+      <div class="contact">
+        <a class="mail" href="mailto:info@kessler-beispiel.de"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>info@kessler-beispiel.de</a>
+        <a href="tel:+497321000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>07321 000 000</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero" id="top">
+    <img class="hero-bg" src="img/hero-bg.jpg" alt="" width="2000" height="1330" fetchpriority="high" />
+
+    <nav class="nav" aria-label="Hauptnavigation">
+      <div class="wrap">
+        <a class="logo" href="#top" aria-label="Kessler Haustechnik Startseite">
+          <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11z"/><path d="M9.5 14.5a2.5 2.5 0 0 0 2.5 2.5"/></svg></span>
+          <span><strong>KESSLER</strong><small>HAUSTECHNIK</small></span>
+        </a>
+        <ul class="menu">
+          <li>
+            <button type="button" aria-haspopup="true">Sanitär <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg></button>
+            <ul class="dropdown">
+              <li><a href="#leistungen">Rohrbruch &amp; Leckortung</a></li>
+              <li><a href="#leistungen">Warmwasser &amp; Boiler</a></li>
+              <li><a href="#leistungen">Rohrreinigung</a></li>
+            </ul>
+          </li>
+          <li>
+            <button type="button" aria-haspopup="true">Heizung <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg></button>
+            <ul class="dropdown">
+              <li><a href="#leistungen">Wärmepumpe &amp; Förderung</a></li>
+              <li><a href="#leistungen">Heizungswartung</a></li>
+              <li><a href="#leistungen">Heizungstausch</a></li>
+            </ul>
+          </li>
+          <li><a href="#leistungen">Badsanierung</a></li>
+          <li><a href="#arbeiten">Referenzen</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+        <a class="btn btn-red" href="#kontakt">Angebot anfragen</a>
+        <button class="burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </nav>
+
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <h1>Sanitär &amp; Heizung in Heidenheim: Wir lösen Ihr Problem. Heute noch.</h1>
+        <p class="hero-sub">Meisterbetrieb seit 1998, geprüft und versichert. Ob Rohrbruch um Mitternacht, neue Wärmepumpe oder Traumbad: schnell vor Ort, sauber gearbeitet, fairer Festpreis.</p>
+        <div class="hero-cta">
+          <a class="btn btn-red" href="tel:+497321000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Jetzt anrufen</a>
+          <a class="btn btn-white" href="#kontakt">Kostenloses Angebot</a>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.4"/><path d="M3 19c.5-3.2 3-5 6-5s5.5 1.8 6 5M14.5 14.5c2.8-.3 5.6 1.1 6.5 4.5"/></svg>
+            <strong>3.200+</strong><span>Zufriedene Kunden</span>
+          </div>
+          <div class="stat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11z"/></svg>
+            <strong>650+</strong><span>Bäder saniert</span>
+          </div>
+          <div class="stat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <strong>24/7</strong><span>Notdienst</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-person">
+        <img src="img/monteur.png" alt="Monteur von Kessler Haustechnik mit verschränkten Armen" width="660" height="915" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="leistungen" aria-labelledby="leistungen-titel">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 0 1 5-5l-2.6 2.6.5 2.5 2.5.5 2.6-2.6a4 4 0 0 1-5 5L8 20a2.1 2.1 0 0 1-3-3z"/></svg>Unsere Leistungen</p>
+            <h2 id="leistungen-titel">Alles rund um Wasser und Wärme</h2>
+            <p>Vom tropfenden Hahn bis zur kompletten Haustechnik: ein Ansprechpartner, eigene Monteure und ein Festpreis, bevor wir anfangen.</p>
+          </div>
+          <a class="link-arrow" href="#kontakt">Beratung anfragen <svg viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M0 6h20M15 1l5 5-5 5"/></svg></a>
+        </div>
+
+        <div class="services-list">
+          <article class="service">
+            <div class="service-text">
+              <h3>Rohrbruch &amp; Leckortung</h3>
+              <p>Wasser läuft, wo es nicht soll? Wir finden das Leck mit Wärmebild und Feuchtemessung, ohne Ihre Wände unnötig aufzustemmen.</p>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Notdienst rund um die Uhr</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dokumentation für die Versicherung</li>
+              </ul>
+              <a class="btn btn-navy" href="#kontakt">Mehr erfahren</a>
+            </div>
+            <div class="service-media"><img src="img/leck.jpg" alt="Leck an einem Messingrohr, aus dem Wasser tropft" width="1100" height="1650" loading="lazy" /></div>
+          </article>
+
+          <article class="service">
+            <div class="service-text">
+              <h3>Wärmepumpe &amp; Heizung</h3>
+              <p>Wir rechnen ehrlich durch, was zu Ihrem Haus passt, installieren sauber und kümmern uns um die Förderung bis zur Auszahlung.</p>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Bis zu 70 % BEG-Förderung möglich</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Wartung und Heizungstausch</li>
+              </ul>
+              <a class="btn btn-navy" href="#kontakt">Mehr erfahren</a>
+            </div>
+            <div class="service-media"><img src="img/heizung.jpg" alt="Heizungsraum mit Rohren, Pumpen und Ventilen" width="1100" height="1654" loading="lazy" /></div>
+          </article>
+
+          <article class="service">
+            <div class="service-text">
+              <h3>Badsanierung aus einer Hand</h3>
+              <p>Planung, Fliesen, Sanitär, Elektrik: Wir koordinieren alle Gewerke. Sie haben einen Ansprechpartner und einen festen Fertigstellungstermin.</p>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Barrierefreie Bäder</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>3D-Planung vorab</li>
+              </ul>
+              <a class="btn btn-navy" href="#kontakt">Mehr erfahren</a>
+            </div>
+            <div class="service-media"><img src="img/bad.jpg" alt="Modernes Bad mit freistehender Badewanne und Holzwand" width="1100" height="935" loading="lazy" /></div>
+          </article>
+
+          <article class="service">
+            <div class="service-text">
+              <h3>Warmwasser &amp; Boiler</h3>
+              <p>Kein warmes Wasser mehr? Wir reparieren, entkalken und tauschen Boiler und Durchlauferhitzer, meist noch am selben Tag.</p>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Ersatzgeräte auf Lager</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Entkalkung und Wartung</li>
+              </ul>
+              <a class="btn btn-navy" href="#kontakt">Mehr erfahren</a>
+            </div>
+            <div class="service-media"><img src="img/warmwasser.jpg" alt="Monteur zieht mit einer Zange einen Anschluss am Warmwasserspeicher fest" width="1100" height="990" loading="lazy" /></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section works" id="arbeiten" aria-labelledby="arbeiten-titel">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Referenzen</p>
+            <h2 id="arbeiten-titel">Unsere letzten Einsätze</h2>
+            <p>Ein Auszug aus unseren Projekten im Landkreis Heidenheim. Sauber abgeschlossen, pünktlich übergeben.</p>
+          </div>
+          <a class="link-arrow" href="#kontakt">Alle Projekte <svg viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M0 6h20M15 1l5 5-5 5"/></svg></a>
+        </div>
+        <div class="gallery">
+          <figure class="g1"><img src="img/w2.jpg" alt="Monteur im Blaumann bei Arbeiten im Badezimmer" width="800" height="533" loading="lazy" /><figcaption>Sanitärinstallation, Giengen</figcaption></figure>
+          <figure class="g2"><img src="img/w5.jpg" alt="Hände dichten ein Rohr unter dem Waschbecken ab" width="800" height="600" loading="lazy" /><figcaption>Leckage behoben, Heidenheim</figcaption></figure>
+          <figure class="g3"><img src="img/w7.jpg" alt="Fertiges Bad mit Holz, Terrazzo und runder Deckenleuchte" width="800" height="1067" loading="lazy" /><figcaption>Badsanierung, Königsbronn</figcaption></figure>
+          <figure class="g4"><img src="img/w1.jpg" alt="Monteur montiert ein WC an einer Marmorwand" width="800" height="1058" loading="lazy" style="object-position:center 30%" /><figcaption>WC-Montage, Nattheim</figcaption></figure>
+          <figure class="g5"><img src="img/w6.jpg" alt="Bad mit bodengleicher Dusche und dunklen Fliesen" width="800" height="533" loading="lazy" /><figcaption>Bodengleiche Dusche, Herbrechtingen</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reviews" id="bewertungen" aria-labelledby="bewertungen-titel">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg>Kundenstimmen</p>
+            <h2 id="bewertungen-titel">Das sagen unsere Kunden</h2>
+          </div>
+          <div class="google-badge">
+            <svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
+            <div>
+              <strong>4,9</strong>
+              <div class="stars" aria-label="4,9 von 5 Sternen"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg></div>
+              <small>Google-Bewertungen (Platzhalter)</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-track" id="review-track" tabindex="0" aria-label="Kundenbewertungen">
+          <article class="review">
+            <div class="review-head"><span class="avatar" style="background:#1c2257">M</span><div><strong>Kunde aus Heidenheim</strong><small>Rohrbruch-Notdienst</small></div></div>
+            <div class="rating-line"><div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg></div><svg class="verified" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 2.2 3.2-.4.9 3.1 2.9 1.5-1 3.1 1 3.1-2.9 1.5-.9 3.1-3.2-.4L12 22l-2.4-2.2-3.2.4-.9-3.1-2.9-1.5 1-3.1-1-3.1 2.9-1.5.9-3.1 3.2.4z"/><path d="M8 12.2l2.7 2.6L16.2 9" stroke="#fff" stroke-width="2" fill="none"/></svg></div>
+            <p>Platzhalter: Hier steht eine echte Google-Bewertung, zum Beispiel über einen schnellen Notdiensteinsatz am Wochenende.</p>
+          </article>
+          <article class="review">
+            <div class="review-head"><span class="avatar" style="background:#e3262b">S</span><div><strong>Kundin aus Giengen</strong><small>Badsanierung</small></div></div>
+            <div class="rating-line"><div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg></div><svg class="verified" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 2.2 3.2-.4.9 3.1 2.9 1.5-1 3.1 1 3.1-2.9 1.5-.9 3.1-3.2-.4L12 22l-2.4-2.2-3.2.4-.9-3.1-2.9-1.5 1-3.1-1-3.1 2.9-1.5.9-3.1 3.2.4z"/><path d="M8 12.2l2.7 2.6L16.2 9" stroke="#fff" stroke-width="2" fill="none"/></svg></div>
+            <p>Platzhalter: Eine Bewertung zur Badsanierung, idealerweise mit Lob für Termintreue und Sauberkeit.</p>
+          </article>
+          <article class="review">
+            <div class="review-head"><span class="avatar" style="background:#4b5169">T</span><div><strong>Kunde aus Königsbronn</strong><small>Wärmepumpe</small></div></div>
+            <div class="rating-line"><div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg></div><svg class="verified" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 2.2 3.2-.4.9 3.1 2.9 1.5-1 3.1 1 3.1-2.9 1.5-.9 3.1-3.2-.4L12 22l-2.4-2.2-3.2.4-.9-3.1-2.9-1.5 1-3.1-1-3.1 2.9-1.5.9-3.1 3.2.4z"/><path d="M8 12.2l2.7 2.6L16.2 9" stroke="#fff" stroke-width="2" fill="none"/></svg></div>
+            <p>Platzhalter: Eine Bewertung zur Wärmepumpe und zur Hilfe beim Förderantrag.</p>
+          </article>
+          <article class="review">
+            <div class="review-head"><span class="avatar" style="background:#1c2257">A</span><div><strong>Hausverwaltung aus Heidenheim</strong><small>Wartungsvertrag</small></div></div>
+            <div class="rating-line"><div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg></div><svg class="verified" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 2.2 3.2-.4.9 3.1 2.9 1.5-1 3.1 1 3.1-2.9 1.5-.9 3.1-3.2-.4L12 22l-2.4-2.2-3.2.4-.9-3.1-2.9-1.5 1-3.1-1-3.1 2.9-1.5.9-3.1 3.2.4z"/><path d="M8 12.2l2.7 2.6L16.2 9" stroke="#fff" stroke-width="2" fill="none"/></svg></div>
+            <p>Platzhalter: Eine Bewertung eines Gewerbekunden, etwa zu Zuverlässigkeit bei Wartungsterminen.</p>
+          </article>
+        </div>
+        <div class="slider-controls">
+          <p class="note">Konzept: Hier werden echte Google-Bewertungen automatisch eingebunden.</p>
+          <div class="arrows">
+            <button class="arrow" type="button" data-dir="-1" aria-label="Vorherige Bewertungen"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 3 5 8l5 5"/></svg></button>
+            <button class="arrow" type="button" data-dir="1" aria-label="Nächste Bewertungen"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3l5 5-5 5"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="partners" aria-labelledby="partner-titel">
+      <div class="wrap">
+        <p class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7z"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Partner</p>
+        <h2 id="partner-titel">Bauträger und Hausverwaltungen, die auf uns zählen</h2>
+        <div class="logo-row">
+          <div class="logo-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 18V6l8 8V6M16 6v12l4-6"/></svg>NORDWERK</div>
+          <div class="logo-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 18l6-10 4 6 2-3 6 7z"/></svg>ALBHAUS</div>
+          <div class="logo-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 11l8-6 8 6v8H4z"/><path d="M10 19v-5h4v5"/></svg>HAUSKONTOR</div>
+          <div class="logo-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9l2 6 2-4 2 4 2-6"/></svg>WOHNWERT</div>
+          <div class="logo-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M8 15V9h5a2 2 0 0 1 0 4H8"/></svg>BAUKREIS</div>
+          <div class="logo-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M5 5h6v6H5zM13 13h6v6h-6zM13 5h6v6h-6z"/></svg>QUARTIER 9</div>
+        </div>
+        <p class="note">Konzept: Beispiel-Logos, hier stehen später echte Partner.</p>
+      </div>
+    </section>
+
+    <section class="section area" id="einsatzgebiet" aria-labelledby="gebiet-titel">
+      <div class="wrap area-grid">
+        <div>
+          <p class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Einsatzgebiet</p>
+          <h2 id="gebiet-titel">Schnell bei Ihnen im ganzen Landkreis Heidenheim</h2>
+          <p>Unsere Monteure sind täglich in der Region unterwegs. Im Notfall sind wir im Umkreis von 25 km meist innerhalb einer Stunde bei Ihnen.</p>
+          <ul class="towns">
+            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7z"/></svg>Heidenheim</li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7z"/></svg>Giengen</li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7z"/></svg>Herbrechtingen</li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7z"/></svg>Königsbronn</li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7z"/></svg>Steinheim</li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7z"/></svg>Nattheim</li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7z"/></svg>Sontheim</li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7z"/></svg>Gerstetten</li>
+          </ul>
+          <a class="btn btn-red" href="tel:+497321000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>07321 000 000</a>
+        </div>
+        <div class="map" role="img" aria-label="Karte des Einsatzgebiets rund um Heidenheim an der Brenz">
+          <div class="map-tiles" id="map-tiles" aria-hidden="true"></div>
+          <div class="map-pin" aria-hidden="true"><span class="label">Kessler Haustechnik</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></div>
+          <span class="map-credit">© OpenStreetMap</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="emergency" role="region" aria-label="Notdienst">
+      <div class="wrap">
+        <div><strong>Rohrbruch oder Heizung ausgefallen?</strong><span>Unser Notdienst ist rund um die Uhr für Sie erreichbar, auch an Sonn- und Feiertagen.</span></div>
+        <a class="btn" href="tel:+497321000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Notdienst anrufen</a>
+      </div>
+    </div>
+
+    <section class="section" id="kontakt" aria-labelledby="faq-titel">
+      <div class="wrap contact-grid">
+        <div class="faq">
+          <p class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17.2v.3"/></svg>Häufige Fragen</p>
+          <h2 id="faq-titel">Gut zu wissen</h2>
+          <div class="faq-list">
+            <div class="faq-item open"><button class="faq-q" type="button" aria-expanded="true">Wie schnell sind Sie im Notfall da?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><div><p>Im Raum Heidenheim meist innerhalb von 60 Minuten, rund um die Uhr, auch am Wochenende und an Feiertagen.</p></div></div></div>
+            <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Was kostet eine Badsanierung?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><div><p>Ein Komplettbad mit rund 8 m² liegt meist zwischen 18.000 und 35.000 Euro. Nach dem kostenlosen Vor-Ort-Termin erhalten Sie einen verbindlichen Festpreis.</p></div></div></div>
+            <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Helfen Sie bei der Förderung für eine Wärmepumpe?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><div><p>Ja. Wir prüfen Ihren Anspruch auf die BEG-Förderung, bereiten die Unterlagen vor und begleiten den Antrag bis zur Auszahlung.</p></div></div></div>
+            <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Ist das Angebot kostenlos?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><div><p>Ja. Beratung, Besichtigung und Angebot sind kostenlos und unverbindlich.</p></div></div></div>
+          </div>
+        </div>
+
+        <form class="form-card" id="anfrage" novalidate>
+          <h2>Kostenloses Angebot anfordern</h2>
+          <p>Schildern Sie kurz Ihr Anliegen. Wir melden uns innerhalb eines Werktags, im Notfall bitte direkt anrufen.</p>
+          <div class="form-grid">
+            <div class="field full">
+              <label for="leistung">Worum geht es?</label>
+              <select id="leistung">
+                <option>Rohrbruch / Leck</option>
+                <option>Wärmepumpe / Heizung</option>
+                <option selected>Badsanierung</option>
+                <option>Warmwasser / Boiler</option>
+                <option>Wartung</option>
+                <option>Sonstiges</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" type="text" autocomplete="name" placeholder="Vor- und Nachname" />
+              <span class="err">Bitte geben Sie Ihren Namen ein.</span>
+            </div>
+            <div class="field">
+              <label for="tel">Telefon</label>
+              <input id="tel" type="tel" autocomplete="tel" placeholder="Für Rückfragen" />
+              <span class="err">Bitte geben Sie eine Telefonnummer ein.</span>
+            </div>
+            <div class="field full">
+              <label for="ort">PLZ / Ort</label>
+              <input id="ort" type="text" autocomplete="postal-code" placeholder="z. B. 89518 Heidenheim" />
+            </div>
+            <div class="field full">
+              <label for="nachricht">Nachricht</label>
+              <textarea id="nachricht" placeholder="Was ist passiert oder was planen Sie?"></textarea>
+            </div>
+          </div>
+          <button class="btn btn-red" type="submit">Anfrage senden</button>
+          <p class="form-note">Kostenlos und unverbindlich. Ihre Daten nutzen wir nur für Ihre Anfrage.</p>
+          <p class="form-ok" id="form-ok">Danke! Ihr E-Mail-Programm öffnet sich mit der fertigen Anfrage.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="#top"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11z"/></svg></span><span><strong>KESSLER</strong><small>HAUSTECHNIK</small></span></a>
+          <p>Ihr Meisterbetrieb für Sanitär, Heizung und Bad im Landkreis Heidenheim.</p>
+        </div>
+        <div>
+          <h4>Leistungen</h4>
+          <ul><li><a href="#leistungen">Rohrbruch &amp; Leckortung</a></li><li><a href="#leistungen">Wärmepumpe &amp; Heizung</a></li><li><a href="#leistungen">Badsanierung</a></li><li><a href="#leistungen">Warmwasser &amp; Boiler</a></li></ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul><li>Beispielstraße 12<br />89518 Heidenheim</li><li><a href="tel:+497321000000">07321 000 000</a></li><li><a href="mailto:info@kessler-beispiel.de">info@kessler-beispiel.de</a></li></ul>
+        </div>
+        <div>
+          <h4>Öffnungszeiten</h4>
+          <ul><li>Mo–Fr: 7:00–17:00 Uhr</li><li>Notdienst: 24/7</li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Kessler Haustechnik. Design-Konzept von SAKA Solutions, fiktiver Beispielbetrieb.</span>
+        <nav><a href="#">Impressum</a><a href="#">Datenschutz</a></nav>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <button class="close" type="button" aria-label="Menü schließen">×</button>
+    <a href="#leistungen">Leistungen</a>
+    <a href="#arbeiten">Referenzen</a>
+    <a href="#bewertungen">Bewertungen</a>
+    <a href="#einsatzgebiet">Einsatzgebiet</a>
+    <a href="#kontakt">Kontakt</a>
+    <a class="btn btn-red" href="tel:+497321000000">07321 000 000 anrufen</a>
+  </div>
+
+  <div class="mobile-bar">
+    <a class="btn btn-red" href="tel:+497321000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Anrufen</a>
+    <a class="btn btn-outline" href="#anfrage">Angebot</a>
+  </div>
+
+  <script>
+    // Karte: OSM-Kacheln rund um Heidenheim (Zoom 13)
+    (function () {
+      var box = document.getElementById('map-tiles'), html = '';
+      for (var y = 2823; y <= 2827; y++) for (var x = 4323; x <= 4330; x++)
+        html += '<img src="https://tile.openstreetmap.org/13/' + x + '/' + y + '.png" alt="" loading="lazy" width="256" height="256" />';
+      box.innerHTML = html;
+    })();
+
+    // Mobiles Menü
+    (function () {
+      var menu = document.getElementById('mobile-menu'), burger = document.querySelector('.burger');
+      function set(open) {
+        menu.classList.toggle('open', open);
+        menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+      burger.addEventListener('click', function () { set(true); });
+      menu.querySelector('.close').addEventListener('click', function () { set(false); });
+      menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { set(false); }); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
+    })();
+
+    // Bewertungen
+    (function () {
+      var track = document.getElementById('review-track');
+      document.querySelectorAll('.arrow').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var card = track.querySelector('.review');
+          track.scrollBy({ left: Number(b.dataset.dir) * (card.offsetWidth + 24), behavior: 'smooth' });
+        });
+      });
+    })();
+
+    // FAQ
+    document.querySelectorAll('.faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.parentElement, open = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function (el) { el.classList.remove('open'); el.querySelector('.faq-q').setAttribute('aria-expanded', 'false'); });
+        if (!open) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+      });
+    });
+
+    // Leistungs-Buttons wählen passende Option im Formular
+    document.querySelectorAll('.service .btn-navy').forEach(function (a) {
+      a.addEventListener('click', function () {
+        var title = a.closest('.service').querySelector('h3').textContent;
+        var map = { 'Rohrbruch': 'Rohrbruch / Leck', 'Wärmepumpe': 'Wärmepumpe / Heizung', 'Badsanierung': 'Badsanierung', 'Warmwasser': 'Warmwasser / Boiler' };
+        Object.keys(map).forEach(function (k) { if (title.indexOf(k) === 0) document.getElementById('leistung').value = map[k]; });
+      });
+    });
+
+    // Anfrageformular
+    (function () {
+      var form = document.getElementById('anfrage');
+      function check(id, ok) { document.getElementById(id).closest('.field').classList.toggle('invalid', !ok); return ok; }
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = document.getElementById('name').value.trim();
+        var tel = document.getElementById('tel').value.trim();
+        var ok = [check('name', name.length > 1), check('tel', tel.replace(/\D/g, '').length >= 6)].every(Boolean);
+        if (!ok) { form.querySelector('.invalid input').focus(); return; }
+        var leistung = document.getElementById('leistung').value;
+        var lines = ['Anliegen: ' + leistung, 'Name: ' + name, 'Telefon: ' + tel];
+        var ort = document.getElementById('ort').value.trim(); if (ort) lines.push('Ort: ' + ort);
+        var msg = document.getElementById('nachricht').value.trim(); if (msg) lines.push('', msg);
+        document.getElementById('form-ok').style.display = 'block';
+        window.location.href = 'mailto:info@kessler-beispiel.de?subject=' + encodeURIComponent('Anfrage: ' + leistung) + '&body=' + encodeURIComponent(lines.join('\n'));
+      });
+    })();
+  </script>
+</body>
+</html>
