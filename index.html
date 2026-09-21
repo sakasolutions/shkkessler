@@ -295,7 +295,25 @@
     .mobile-bar { display: none; }
     .mobile-menu { display: none; }
 
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } html { scroll-behavior: auto; } }
+    /* ---------- Scroll-Animationen ---------- */
+    .js-anim [data-anim] { opacity: 0; transition: opacity .75s cubic-bezier(.22,.61,.3,1), transform .75s cubic-bezier(.22,.61,.3,1), clip-path .9s cubic-bezier(.22,.61,.3,1); transition-delay: var(--anim-delay, 0s); will-change: opacity, transform; }
+    .js-anim [data-anim="up"] { transform: translateY(26px); }
+    .js-anim [data-anim="left"] { transform: translateX(-34px); }
+    .js-anim [data-anim="right"] { transform: translateX(34px); }
+    .js-anim [data-anim="fade"] { transform: none; }
+    .js-anim [data-anim].is-in { opacity: 1; transform: none; }
+    .js-anim .service:nth-child(odd) .service-text[data-anim] { transform: translateX(-34px); }
+    .js-anim .service:nth-child(even) .service-text[data-anim] { transform: translateX(34px); }
+    .js-anim .service .service-text[data-anim].is-in { transform: none; }
+    .js-anim .service-media[data-anim] { transform: translateY(20px); clip-path: inset(0 0 28% 0 round var(--radius)); }
+    .js-anim .service-media[data-anim].is-in { transform: none; clip-path: inset(0 0 0 0 round var(--radius)); }
+    .js-anim .hero-person[data-anim] { --anim-delay: .2s; }
+    .js-anim .section, .js-anim .partners, .js-anim .emergency, .js-anim .footer { overflow-x: clip; }
+    @media (max-width: 900px) {
+      .js-anim [data-anim="left"], .js-anim [data-anim="right"], .js-anim .service .service-text[data-anim] { transform: translateY(22px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } html { scroll-behavior: auto; } .js-anim [data-anim] { opacity: 1 !important; transform: none !important; clip-path: none !important; } }
 
     /* ---------- Responsive ---------- */
     @media (max-width: 1080px) {
@@ -351,6 +369,11 @@
       .mobile-bar .btn-outline { border-color: var(--navy); color: var(--navy); }
     }
   </style>
+
+  <script>
+    // Scroll-Animationen nur mit JS und nur, wenn Bewegung erwuenscht ist
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('js-anim');
+  </script>
 </head>
 <body>
 
@@ -404,29 +427,29 @@
     </nav>
 
     <div class="wrap hero-inner">
-      <div class="hero-copy">
-        <h1>Sanitär &amp; Heizung in Heidenheim: Wir lösen Ihr Problem. Heute noch.</h1>
-        <p class="hero-sub">Meisterbetrieb seit 1998, geprüft und versichert. Ob Rohrbruch um Mitternacht, neue Wärmepumpe oder Traumbad: schnell vor Ort, sauber gearbeitet, fairer Festpreis.</p>
-        <div class="hero-cta">
+      <div class="hero-copy" data-anim-stagger="110">
+        <h1 data-anim="up">Sanitär &amp; Heizung in Heidenheim: Wir lösen Ihr Problem. Heute noch.</h1>
+        <p class="hero-sub" data-anim="up">Meisterbetrieb seit 1998, geprüft und versichert. Ob Rohrbruch um Mitternacht, neue Wärmepumpe oder Traumbad: schnell vor Ort, sauber gearbeitet, fairer Festpreis.</p>
+        <div class="hero-cta" data-anim="up">
           <a class="btn btn-red" href="tel:+497321000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Jetzt anrufen</a>
           <a class="btn btn-white" href="#kontakt">Kostenloses Angebot</a>
         </div>
         <div class="stats">
-          <div class="stat">
+          <div class="stat" data-anim="up">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.4"/><path d="M3 19c.5-3.2 3-5 6-5s5.5 1.8 6 5M14.5 14.5c2.8-.3 5.6 1.1 6.5 4.5"/></svg>
             <strong>3.200+</strong><span>Zufriedene Kunden</span>
           </div>
-          <div class="stat">
+          <div class="stat" data-anim="up">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11z"/></svg>
             <strong>650+</strong><span>Bäder saniert</span>
           </div>
-          <div class="stat">
+          <div class="stat" data-anim="up">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
             <strong>24/7</strong><span>Notdienst</span>
           </div>
         </div>
       </div>
-      <div class="hero-person">
+      <div class="hero-person" data-anim="fade">
         <img src="img/monteur.png" alt="Monteur von Kessler Haustechnik mit verschränkten Armen" width="660" height="915" />
       </div>
     </div>
@@ -435,18 +458,18 @@
   <main>
     <section class="section" id="leistungen" aria-labelledby="leistungen-titel">
       <div class="wrap">
-        <div class="section-head">
-          <div>
+        <div class="section-head" data-anim-stagger="90">
+          <div data-anim="up">
             <p class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 0 1 5-5l-2.6 2.6.5 2.5 2.5.5 2.6-2.6a4 4 0 0 1-5 5L8 20a2.1 2.1 0 0 1-3-3z"/></svg>Unsere Leistungen</p>
             <h2 id="leistungen-titel">Alles rund um Wasser und Wärme</h2>
             <p>Vom tropfenden Hahn bis zur kompletten Haustechnik: ein Ansprechpartner, eigene Monteure und ein Festpreis, bevor wir anfangen.</p>
           </div>
-          <a class="link-arrow" href="#kontakt">Beratung anfragen <svg viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M0 6h20M15 1l5 5-5 5"/></svg></a>
+          <a class="link-arrow" href="#kontakt" data-anim="up">Beratung anfragen <svg viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M0 6h20M15 1l5 5-5 5"/></svg></a>
         </div>
 
         <div class="services-list">
-          <article class="service">
-            <div class="service-text">
+          <article class="service" data-anim-stagger="120">
+            <div class="service-text" data-anim="fade">
               <h3>Rohrbruch &amp; Leckortung</h3>
               <p>Wasser läuft, wo es nicht soll? Wir finden das Leck mit Wärmebild und Feuchtemessung, ohne Ihre Wände unnötig aufzustemmen.</p>
               <ul>
@@ -455,11 +478,11 @@
               </ul>
               <a class="btn btn-navy" href="#kontakt">Mehr erfahren</a>
             </div>
-            <div class="service-media"><img src="img/leck.jpg" alt="Leck an einem Messingrohr, aus dem Wasser tropft" width="1100" height="1650" loading="lazy" /></div>
+            <div class="service-media" data-anim="up"><img src="img/leck.jpg" alt="Leck an einem Messingrohr, aus dem Wasser tropft" width="1100" height="1650" loading="lazy" /></div>
           </article>
 
-          <article class="service">
-            <div class="service-text">
+          <article class="service" data-anim-stagger="120">
+            <div class="service-text" data-anim="fade">
               <h3>Wärmepumpe &amp; Heizung</h3>
               <p>Wir rechnen ehrlich durch, was zu Ihrem Haus passt, installieren sauber und kümmern uns um die Förderung bis zur Auszahlung.</p>
               <ul>
@@ -468,11 +491,11 @@
               </ul>
               <a class="btn btn-navy" href="#kontakt">Mehr erfahren</a>
             </div>
-            <div class="service-media"><img src="img/heizung.jpg" alt="Heizungsraum mit Rohren, Pumpen und Ventilen" width="1100" height="1654" loading="lazy" /></div>
+            <div class="service-media" data-anim="up"><img src="img/heizung.jpg" alt="Heizungsraum mit Rohren, Pumpen und Ventilen" width="1100" height="1654" loading="lazy" /></div>
           </article>
 
-          <article class="service">
-            <div class="service-text">
+          <article class="service" data-anim-stagger="120">
+            <div class="service-text" data-anim="fade">
               <h3>Badsanierung aus einer Hand</h3>
               <p>Planung, Fliesen, Sanitär, Elektrik: Wir koordinieren alle Gewerke. Sie haben einen Ansprechpartner und einen festen Fertigstellungstermin.</p>
               <ul>
@@ -481,11 +504,11 @@
               </ul>
               <a class="btn btn-navy" href="#kontakt">Mehr erfahren</a>
             </div>
-            <div class="service-media"><img src="img/bad.jpg" alt="Modernes Bad mit freistehender Badewanne und Holzwand" width="1100" height="935" loading="lazy" /></div>
+            <div class="service-media" data-anim="up"><img src="img/bad.jpg" alt="Modernes Bad mit freistehender Badewanne und Holzwand" width="1100" height="935" loading="lazy" /></div>
           </article>
 
-          <article class="service">
-            <div class="service-text">
+          <article class="service" data-anim-stagger="120">
+            <div class="service-text" data-anim="fade">
               <h3>Warmwasser &amp; Boiler</h3>
               <p>Kein warmes Wasser mehr? Wir reparieren, entkalken und tauschen Boiler und Durchlauferhitzer, meist noch am selben Tag.</p>
               <ul>
@@ -494,7 +517,7 @@
               </ul>
               <a class="btn btn-navy" href="#kontakt">Mehr erfahren</a>
             </div>
-            <div class="service-media"><img src="img/warmwasser.jpg" alt="Monteur zieht mit einer Zange einen Anschluss am Warmwasserspeicher fest" width="1100" height="990" loading="lazy" /></div>
+            <div class="service-media" data-anim="up"><img src="img/warmwasser.jpg" alt="Monteur zieht mit einer Zange einen Anschluss am Warmwasserspeicher fest" width="1100" height="990" loading="lazy" /></div>
           </article>
         </div>
       </div>
@@ -502,32 +525,32 @@
 
     <section class="section works" id="arbeiten" aria-labelledby="arbeiten-titel">
       <div class="wrap">
-        <div class="section-head">
-          <div>
+        <div class="section-head" data-anim-stagger="90">
+          <div data-anim="up">
             <p class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Referenzen</p>
             <h2 id="arbeiten-titel">Unsere letzten Einsätze</h2>
             <p>Ein Auszug aus unseren Projekten im Landkreis Heidenheim. Sauber abgeschlossen, pünktlich übergeben.</p>
           </div>
-          <a class="link-arrow" href="#kontakt">Alle Projekte <svg viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M0 6h20M15 1l5 5-5 5"/></svg></a>
+          <a class="link-arrow" href="#kontakt" data-anim="up">Alle Projekte <svg viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M0 6h20M15 1l5 5-5 5"/></svg></a>
         </div>
-        <div class="gallery">
-          <figure class="g1"><img src="img/w2.jpg" alt="Monteur im Blaumann bei Arbeiten im Badezimmer" width="800" height="533" loading="lazy" /><figcaption>Sanitärinstallation, Giengen</figcaption></figure>
-          <figure class="g2"><img src="img/w5.jpg" alt="Hände dichten ein Rohr unter dem Waschbecken ab" width="800" height="600" loading="lazy" /><figcaption>Leckage behoben, Heidenheim</figcaption></figure>
-          <figure class="g3"><img src="img/w7.jpg" alt="Fertiges Bad mit Holz, Terrazzo und runder Deckenleuchte" width="800" height="1067" loading="lazy" /><figcaption>Badsanierung, Königsbronn</figcaption></figure>
-          <figure class="g4"><img src="img/w1.jpg" alt="Monteur montiert ein WC an einer Marmorwand" width="800" height="1058" loading="lazy" style="object-position:center 30%" /><figcaption>WC-Montage, Nattheim</figcaption></figure>
-          <figure class="g5"><img src="img/w6.jpg" alt="Bad mit bodengleicher Dusche und dunklen Fliesen" width="800" height="533" loading="lazy" /><figcaption>Bodengleiche Dusche, Herbrechtingen</figcaption></figure>
+        <div class="gallery" data-anim-stagger="110">
+          <figure class="g1" data-anim="up"><img src="img/w2.jpg" alt="Monteur im Blaumann bei Arbeiten im Badezimmer" width="800" height="533" loading="lazy" /><figcaption>Sanitärinstallation, Giengen</figcaption></figure>
+          <figure class="g2" data-anim="up"><img src="img/w5.jpg" alt="Hände dichten ein Rohr unter dem Waschbecken ab" width="800" height="600" loading="lazy" /><figcaption>Leckage behoben, Heidenheim</figcaption></figure>
+          <figure class="g3" data-anim="up"><img src="img/w7.jpg" alt="Fertiges Bad mit Holz, Terrazzo und runder Deckenleuchte" width="800" height="1067" loading="lazy" /><figcaption>Badsanierung, Königsbronn</figcaption></figure>
+          <figure class="g4" data-anim="up"><img src="img/w1.jpg" alt="Monteur montiert ein WC an einer Marmorwand" width="800" height="1058" loading="lazy" style="object-position:center 30%" /><figcaption>WC-Montage, Nattheim</figcaption></figure>
+          <figure class="g5" data-anim="up"><img src="img/w6.jpg" alt="Bad mit bodengleicher Dusche und dunklen Fliesen" width="800" height="533" loading="lazy" /><figcaption>Bodengleiche Dusche, Herbrechtingen</figcaption></figure>
         </div>
       </div>
     </section>
 
     <section class="section reviews" id="bewertungen" aria-labelledby="bewertungen-titel">
       <div class="wrap">
-        <div class="section-head">
-          <div>
+        <div class="section-head" data-anim-stagger="90">
+          <div data-anim="up">
             <p class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg>Kundenstimmen</p>
             <h2 id="bewertungen-titel">Das sagen unsere Kunden</h2>
           </div>
-          <div class="google-badge">
+          <div class="google-badge" data-anim="up">
             <svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
             <div>
               <strong>4,9</strong>
@@ -537,7 +560,7 @@
           </div>
         </div>
 
-        <div class="review-track" id="review-track" tabindex="0" aria-label="Kundenbewertungen">
+        <div class="review-track" id="review-track" data-anim="up" tabindex="0" aria-label="Kundenbewertungen">
           <article class="review">
             <div class="review-head"><span class="avatar" style="background:#1c2257">M</span><div><strong>Kunde aus Heidenheim</strong><small>Rohrbruch-Notdienst</small></div></div>
             <div class="rating-line"><div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg></div><svg class="verified" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 2.2 3.2-.4.9 3.1 2.9 1.5-1 3.1 1 3.1-2.9 1.5-.9 3.1-3.2-.4L12 22l-2.4-2.2-3.2.4-.9-3.1-2.9-1.5 1-3.1-1-3.1 2.9-1.5.9-3.1 3.2.4z"/><path d="M8 12.2l2.7 2.6L16.2 9" stroke="#fff" stroke-width="2" fill="none"/></svg></div>
@@ -559,7 +582,7 @@
             <p>Platzhalter: Eine Bewertung eines Gewerbekunden, etwa zu Zuverlässigkeit bei Wartungsterminen.</p>
           </article>
         </div>
-        <div class="slider-controls">
+        <div class="slider-controls" data-anim="up">
           <p class="note">Konzept: Hier werden echte Google-Bewertungen automatisch eingebunden.</p>
           <div class="arrows">
             <button class="arrow" type="button" data-dir="-1" aria-label="Vorherige Bewertungen"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 3 5 8l5 5"/></svg></button>
@@ -571,27 +594,27 @@
 
     <section class="partners" aria-labelledby="partner-titel">
       <div class="wrap">
-        <p class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7z"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Partner</p>
-        <h2 id="partner-titel">Bauträger und Hausverwaltungen, die auf uns zählen</h2>
-        <div class="logo-row">
-          <div class="logo-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 18V6l8 8V6M16 6v12l4-6"/></svg>NORDWERK</div>
-          <div class="logo-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 18l6-10 4 6 2-3 6 7z"/></svg>ALBHAUS</div>
-          <div class="logo-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 11l8-6 8 6v8H4z"/><path d="M10 19v-5h4v5"/></svg>HAUSKONTOR</div>
-          <div class="logo-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9l2 6 2-4 2 4 2-6"/></svg>WOHNWERT</div>
-          <div class="logo-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M8 15V9h5a2 2 0 0 1 0 4H8"/></svg>BAUKREIS</div>
-          <div class="logo-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M5 5h6v6H5zM13 13h6v6h-6zM13 5h6v6h-6z"/></svg>QUARTIER 9</div>
+        <p class="eyebrow" data-anim="up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7z"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Partner</p>
+        <h2 id="partner-titel" data-anim="up">Bauträger und Hausverwaltungen, die auf uns zählen</h2>
+        <div class="logo-row" data-anim-stagger="70">
+          <div class="logo-tile" data-anim="up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 18V6l8 8V6M16 6v12l4-6"/></svg>NORDWERK</div>
+          <div class="logo-tile" data-anim="up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 18l6-10 4 6 2-3 6 7z"/></svg>ALBHAUS</div>
+          <div class="logo-tile" data-anim="up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 11l8-6 8 6v8H4z"/><path d="M10 19v-5h4v5"/></svg>HAUSKONTOR</div>
+          <div class="logo-tile" data-anim="up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9l2 6 2-4 2 4 2-6"/></svg>WOHNWERT</div>
+          <div class="logo-tile" data-anim="up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M8 15V9h5a2 2 0 0 1 0 4H8"/></svg>BAUKREIS</div>
+          <div class="logo-tile" data-anim="up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M5 5h6v6H5zM13 13h6v6h-6zM13 5h6v6h-6z"/></svg>QUARTIER 9</div>
         </div>
-        <p class="note">Konzept: Beispiel-Logos, hier stehen später echte Partner.</p>
+        <p class="note" data-anim="fade">Konzept: Beispiel-Logos, hier stehen später echte Partner.</p>
       </div>
     </section>
 
     <section class="section area" id="einsatzgebiet" aria-labelledby="gebiet-titel">
       <div class="wrap area-grid">
-        <div>
-          <p class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Einsatzgebiet</p>
-          <h2 id="gebiet-titel">Schnell bei Ihnen im ganzen Landkreis Heidenheim</h2>
-          <p>Unsere Monteure sind täglich in der Region unterwegs. Im Notfall sind wir im Umkreis von 25 km meist innerhalb einer Stunde bei Ihnen.</p>
-          <ul class="towns">
+        <div data-anim-stagger="90">
+          <p class="eyebrow" data-anim="up"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Einsatzgebiet</p>
+          <h2 id="gebiet-titel" data-anim="up">Schnell bei Ihnen im ganzen Landkreis Heidenheim</h2>
+          <p data-anim="up">Unsere Monteure sind täglich in der Region unterwegs. Im Notfall sind wir im Umkreis von 25 km meist innerhalb einer Stunde bei Ihnen.</p>
+          <ul class="towns" data-anim="up">
             <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7z"/></svg>Heidenheim</li>
             <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7z"/></svg>Giengen</li>
             <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7z"/></svg>Herbrechtingen</li>
@@ -601,9 +624,9 @@
             <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7z"/></svg>Sontheim</li>
             <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7z"/></svg>Gerstetten</li>
           </ul>
-          <a class="btn btn-red" href="tel:+497321000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>07321 000 000</a>
+          <a class="btn btn-red" href="tel:+497321000000" data-anim="up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>07321 000 000</a>
         </div>
-        <div class="map" role="img" aria-label="Karte des Einsatzgebiets rund um Heidenheim an der Brenz">
+        <div class="map" role="img" data-anim="up" aria-label="Karte des Einsatzgebiets rund um Heidenheim an der Brenz">
           <div class="map-tiles" id="map-tiles" aria-hidden="true"></div>
           <div class="map-pin" aria-hidden="true"><span class="label">Kessler Haustechnik</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></div>
           <span class="map-credit">© OpenStreetMap</span>
@@ -611,7 +634,7 @@
       </div>
     </section>
 
-    <div class="emergency" role="region" aria-label="Notdienst">
+    <div class="emergency" role="region" data-anim="up" aria-label="Notdienst">
       <div class="wrap">
         <div><strong>Rohrbruch oder Heizung ausgefallen?</strong><span>Unser Notdienst ist rund um die Uhr für Sie erreichbar, auch an Sonn- und Feiertagen.</span></div>
         <a class="btn" href="tel:+497321000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Notdienst anrufen</a>
@@ -621,17 +644,17 @@
     <section class="section" id="kontakt" aria-labelledby="faq-titel">
       <div class="wrap contact-grid">
         <div class="faq">
-          <p class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17.2v.3"/></svg>Häufige Fragen</p>
-          <h2 id="faq-titel">Gut zu wissen</h2>
-          <div class="faq-list">
-            <div class="faq-item open"><button class="faq-q" type="button" aria-expanded="true">Wie schnell sind Sie im Notfall da?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><div><p>Im Raum Heidenheim meist innerhalb von 60 Minuten, rund um die Uhr, auch am Wochenende und an Feiertagen.</p></div></div></div>
-            <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Was kostet eine Badsanierung?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><div><p>Ein Komplettbad mit rund 8 m² liegt meist zwischen 18.000 und 35.000 Euro. Nach dem kostenlosen Vor-Ort-Termin erhalten Sie einen verbindlichen Festpreis.</p></div></div></div>
-            <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Helfen Sie bei der Förderung für eine Wärmepumpe?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><div><p>Ja. Wir prüfen Ihren Anspruch auf die BEG-Förderung, bereiten die Unterlagen vor und begleiten den Antrag bis zur Auszahlung.</p></div></div></div>
-            <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Ist das Angebot kostenlos?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><div><p>Ja. Beratung, Besichtigung und Angebot sind kostenlos und unverbindlich.</p></div></div></div>
+          <p class="eyebrow" data-anim="up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17.2v.3"/></svg>Häufige Fragen</p>
+          <h2 id="faq-titel" data-anim="up">Gut zu wissen</h2>
+          <div class="faq-list" data-anim-stagger="80">
+            <div class="faq-item open" data-anim="up"><button class="faq-q" type="button" aria-expanded="true">Wie schnell sind Sie im Notfall da?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><div><p>Im Raum Heidenheim meist innerhalb von 60 Minuten, rund um die Uhr, auch am Wochenende und an Feiertagen.</p></div></div></div>
+            <div class="faq-item" data-anim="up"><button class="faq-q" type="button" aria-expanded="false">Was kostet eine Badsanierung?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><div><p>Ein Komplettbad mit rund 8 m² liegt meist zwischen 18.000 und 35.000 Euro. Nach dem kostenlosen Vor-Ort-Termin erhalten Sie einen verbindlichen Festpreis.</p></div></div></div>
+            <div class="faq-item" data-anim="up"><button class="faq-q" type="button" aria-expanded="false">Helfen Sie bei der Förderung für eine Wärmepumpe?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><div><p>Ja. Wir prüfen Ihren Anspruch auf die BEG-Förderung, bereiten die Unterlagen vor und begleiten den Antrag bis zur Auszahlung.</p></div></div></div>
+            <div class="faq-item" data-anim="up"><button class="faq-q" type="button" aria-expanded="false">Ist das Angebot kostenlos?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><div><p>Ja. Beratung, Besichtigung und Angebot sind kostenlos und unverbindlich.</p></div></div></div>
           </div>
         </div>
 
-        <form class="form-card" id="anfrage" novalidate>
+        <form class="form-card" id="anfrage" novalidate data-anim="up">
           <h2>Kostenloses Angebot anfordern</h2>
           <p>Schildern Sie kurz Ihr Anliegen. Wir melden uns innerhalb eines Werktags, im Notfall bitte direkt anrufen.</p>
           <div class="form-grid">
@@ -675,20 +698,20 @@
 
   <footer class="footer">
     <div class="wrap">
-      <div class="footer-grid">
-        <div>
+      <div class="footer-grid" data-anim-stagger="80">
+        <div data-anim="up">
           <a class="logo" href="#top"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11z"/></svg></span><span><strong>KESSLER</strong><small>HAUSTECHNIK</small></span></a>
           <p>Ihr Meisterbetrieb für Sanitär, Heizung und Bad im Landkreis Heidenheim.</p>
         </div>
-        <div>
+        <div data-anim="up">
           <h4>Leistungen</h4>
           <ul><li><a href="#leistungen">Rohrbruch &amp; Leckortung</a></li><li><a href="#leistungen">Wärmepumpe &amp; Heizung</a></li><li><a href="#leistungen">Badsanierung</a></li><li><a href="#leistungen">Warmwasser &amp; Boiler</a></li></ul>
         </div>
-        <div>
+        <div data-anim="up">
           <h4>Kontakt</h4>
           <ul><li>Beispielstraße 12<br />89518 Heidenheim</li><li><a href="tel:+497321000000">07321 000 000</a></li><li><a href="mailto:info@kessler-beispiel.de">info@kessler-beispiel.de</a></li></ul>
         </div>
-        <div>
+        <div data-anim="up">
           <h4>Öffnungszeiten</h4>
           <ul><li>Mo–Fr: 7:00–17:00 Uhr</li><li>Notdienst: 24/7</li></ul>
         </div>
@@ -716,6 +739,42 @@
   </div>
 
   <script>
+    // Scroll-Animationen: Elemente blenden beim Hereinscrollen ein
+    (function () {
+      var root = document.documentElement;
+      if (!root.classList.contains('js-anim')) return;
+      if (!('IntersectionObserver' in window)) { root.classList.remove('js-anim'); return; }
+
+      document.querySelectorAll('[data-anim-stagger]').forEach(function (group) {
+        var step = Number(group.dataset.animStagger) || 80, i = 0;
+        group.querySelectorAll('[data-anim]').forEach(function (el) {
+          if (el.parentElement.closest('[data-anim-stagger]') !== group) return;
+          el.style.setProperty('--anim-delay', (i++ * step) + 'ms');
+        });
+      });
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        });
+      }, { rootMargin: '0px 0px -8% 0px' });
+
+      document.querySelectorAll('[data-anim]').forEach(function (el) {
+        if (el.closest('.hero')) return;
+        io.observe(el);
+      });
+
+      // Hero liegt im ersten Blick und startet direkt, zwei Frames spaeter,
+      // damit der Ausgangszustand sicher gerendert ist und der Uebergang laeuft
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          document.querySelectorAll('.hero [data-anim]').forEach(function (el) { el.classList.add('is-in'); });
+        });
+      });
+    })();
+
     // Karte: OSM-Kacheln rund um Heidenheim (Zoom 13)
     (function () {
       var box = document.getElementById('map-tiles'), html = '';
